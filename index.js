@@ -33,6 +33,7 @@ try {
               var objBody = JSON.parse(body);
               if (commander.type == 'route') {
                 if (objBody.status && objBody.status == 'NOT_FOUND') {
+                  console.log(url);
                   cb(null, 'empty');
                 } else if (objBody.status && objBody.status == 'ok') {
                   cb(null, 'success');
@@ -42,6 +43,7 @@ try {
                 }
               } else if (commander.type == 'matrix') {
                 if (objBody.status && objBody.status == 'NOT_FOUND') {
+                  console.log(url);
                   cb(null, 'empty');
                 } else if (objBody.Response && objBody.Response.MatrixEntry && objBody.Response.MatrixEntry.length > 0) {
                   cb(null, 'success');
@@ -63,7 +65,8 @@ try {
         success: 0,
         empty: 0,
         fail: 0,
-        accident: 0
+        accident: 0,
+        error: 0
       };
       for (var i = 0; i < results.length; i++) {
         result[results[i]]++;
