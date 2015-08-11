@@ -2,5 +2,5 @@
 
 ## 检查url是否能正常访问
 
-> node index.js -f data/matrixUrls.log -t matrix  
-> node index.js -f data/routeUrls.log -t route
+> node analyse index.js -f data/matrixUrls.log -t matrix  
+> node analyse index.js -f data/routeUrls.log -t route
