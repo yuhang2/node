@@ -8,19 +8,20 @@ commander.version('0.0.1')
   .arguments('<type>')
   .option('-f, --file <value>', 'url file path')
   .option('-t, --type <value>', 'type of urls')
+  .option('-o, --output <value>', 'save urls')
   .action(function (type) {
     typeValue = type;
   })
   .parse(process.argv);
 
-if (typeof typeValue == 'undefined') {
-  console.error('no type given!')
+if (typeof typeValue === 'undefined') {
+  console.error('no type given!');
   process.exit(1);
 }
 if (typeValue === 'analyse') {
   analyse(commander);
-} else if (typeValue === 'call') {
-  console.log('call');
+} else if (typeValue === 'callMatrix') {
+  call.callMatrix(commander, 'matrix');
 } else {
-  console.error('node index.js [analyse|call]');
+  console.error('node index.js [analyse|callMatrix]');
 }
