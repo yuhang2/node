@@ -19,6 +19,7 @@
   "dependencies": {
     "async": "^1.4.0",
     "commander": "^2.8.1",
+    "httpsync": "0.0.8",
     "request": "^2.60.0"
   }
 }
